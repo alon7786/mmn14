@@ -1,2 +1,2 @@
-asm: asm.c
-	gcc -g -ansi -Wall -pedantic asm.c -o asm
+assembler: assembler.c assembler.h
+	gcc -g -ansi -Wall -pedantic assembler.c -o assembler
