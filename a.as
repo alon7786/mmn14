@@ -1,9 +1,9 @@
-                                ; file ps.as
-.entry LOOP
-.entry LENGTH
+                                        ; file a.as
+  .entry LOOP
+                .entry LENGTH
 .extern L3
 .extern W
-MAIN:   mov K[2-4],W
+  MAIN:   mov K[2-4],W
         add r2,STR
 LOOP:   jmp W
         prn #-5
@@ -16,3 +16,4 @@ END:    stop
 STR:    .string "abcdef"
 LENGTH: .data 6,-9,15
 K:      .data 22
+TEST: .entry 22
