@@ -3,8 +3,8 @@
 int main(int argc, char *argv[])
 {
     char filename[FILE_NAME];
-    LIST *lines = NULL, *mapping = NULL;
     FILE *source_file;
+    LIST *lines = NULL, *mapping = NULL;
     if(argc == SYSTEM_PARAMETERS)
         fprintf(stderr, "No files provided to compile.\n");
     else

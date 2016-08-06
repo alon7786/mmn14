@@ -2,7 +2,7 @@
 
 struct {
     char *name;
-    void (*func)(LIST*);
+    void (*func)(char *, char *, LIST *);
 } directives[] = {
         {"data", data},
         {"entry", entry},
@@ -28,23 +28,40 @@ void parsedirective(char *directive, char *line, int linenum, char *filename, LI
     }
     else
     {
-        (*(directives[i].func))(mapping);
+        (*(directives[i].func))(line, filename, mapping);
     }
 }
 
-void data(LIST *mapping)
+void data(char *line, char *filename, LIST *mapping)
 {
     printf("data\n");
 }
-void entry(LIST *mapping)
+void entry(char *line, char *filename, LIST *mapping)
 {
+    char *word;
+    LIST *cursor, *head;
+
+    word = strtok(line, DELIMITER);
+    if(mapping != NULL)
+    {
+        head = mapping;
+        for(cursor = head->next; cursor != head; cursor = cursor->next)
+        {
+            continue;
+        }
+    }
+    else
+    {
+        mapping = insert_item(mapping, MAPTYPE, 0, 0, word);
+        printf("\n\n\n\n\n\t%s\n", (mapping->data).map.label);
+    }
     printf("entry\n");
 }
-void exter(LIST *mapping)
+void exter(char *line, char *filename, LIST *mapping)
 {
     printf("extern\n");
 }
-void string(LIST *mapping)
+void string(char *line, char *filename, LIST *mapping)
 {
     printf("string\n");
 }

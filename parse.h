@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 #include "directives.h"
+#include "utils.h"
 
 #define LINE_LENGTH 80
 #define INITIAL_ADDRESS 100
-#define DELIMITER " ,\t\n"
 #define DIRECTIVES '.'
 #define LABLE ':'
 #define DATA "data"

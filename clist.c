@@ -1,33 +1,5 @@
 #include "clist.h"
 
-enum {LINETYPE, MAPTYPE};
-
-
-struct line
-{
-    unsigned short int address;
-    unsigned char info;
-};
-
-struct map
-{
-    char label[LABEL_LENGTH];
-    unsigned short int address;
-    unsigned char type;
-};
-
-union datastructure
-{
-    LINE line;
-    MAP map;
-};
-
-struct list
-{
-    elements data;
-    LIST *next;
-};
-
 LIST *insert_item(LIST *l, ...)
 {
     LIST *nl;

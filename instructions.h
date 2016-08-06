@@ -1,0 +1,15 @@
+void mov(void);
+void cmp(void);
+void add(void);
+void sub(void);
+void negative(void);
+void clr(void);
+void lea(void);
+void dec(void);
+void jmp(void);
+void bne(void);
+void red(void);
+void prn(void);
+void jsr(void);
+void rts(void);
+void stop(void);
